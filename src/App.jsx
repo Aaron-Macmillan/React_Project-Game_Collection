@@ -1,12 +1,12 @@
 import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() { 
  return (
 <div className="container">
 
-    <h1 className="title">
-        🎮 Game Collection
-    </h1>
+    <Header />
 
     <div className="games">
 
@@ -19,6 +19,8 @@ function App() {
         <p>Klas: 25B</p>
 
     </div>
+
+    <Footer />
 
 </div>
  )
