@@ -30,7 +30,8 @@
     "platform": "PlayStation 5",
     "genre": "Sport",
     "rating": 8.6,
-    "year": 2025
+    "year": 2025,
+    "image": "Fifa.jpg"
   },
   {
     "id": 5,

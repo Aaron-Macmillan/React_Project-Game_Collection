@@ -5,6 +5,16 @@ const [favorite, setFavorite] = useState(false);
     return (
 
         <div className="game-card">
+            
+             <img
+
+                src={`/images/${props.image}`}
+
+                alt={props.title}
+
+                className="game-image"
+
+             />
 
             <h2>{props.title}</h2>
 

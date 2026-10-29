@@ -56,7 +56,8 @@ const [search, setSearch] = useState("");
             rating={game.rating}
 
             year={game.year}
-
+            
+            image={game.image}
         />
 
    ))}
