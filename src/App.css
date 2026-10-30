@@ -1,7 +1,22 @@
+
+/* =================================
+   ALGEMENE STIJL
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+/* =================================
+   CONTAINER
+================================= */
 
 .container {
     max-width: 900px;
@@ -19,75 +34,293 @@ body {
     margin-bottom: 30px;
 }
 
+/* =================================
+   GAME LIJST
+================================= */
+
 .game-list {
-    margin-top: 30px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 30px auto 0;
+    padding: 0 20px;
 }
 
+/* =================================
+   GAME GRID
+================================= */
+
+.game-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 260px), 1fr)
+    );
+
+    grid-auto-rows: 1fr;
+
+    gap: 20px;
+    width: 100%;
+    margin: 20px auto;
+
+    align-items: stretch;
+}
+
+/* =================================
+   GAME KAARTEN
+================================= */
+
 .game-card {
-    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 520px;
+    min-width: 0;
+
+    background-color: #ffffff;
     border: 1px solid #dddddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
-    transition: 0.2s ease;
+    border-radius: 14px;
+
+    padding: 18px;
+    margin: 0;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .game-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 25px rgba(110, 37, 235, 0.18);
+
+    border-color: #6e25eb;
 }
+
+/* =================================
+   GAME TITELS
+================================= */
 
 .game-card h2 {
-    margin-bottom: 8px;
-    color: #333;
+    color: #333333;
+
+    font-size: 22px;
+    line-height: 1.3;
+
+    margin-top: 8px;
+    margin-bottom: 10px;
+
+    height: 57px;
+    min-height: 57px;
+    max-height: 57px;
+
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
+
+/* =================================
+   GAME INFORMATIE
+================================= */
 
 .game-card p {
-    color: #666;
+    color: #666666;
+
+    margin: 4px 0;
+
+    line-height: 1.4;
+    font-size: 15px;
 }
 
-footer {
-    margin-top: 35px;
-    padding-top: 20px;
-    border-top: 1px solid #dddddd;
-    color: #777;
-    font-size: 14px;
+/* =================================
+   AFBEELDING CONTAINER
+================================= */
+
+.game-image-container {
+    width: 100%;
+    height: 180px;
+    min-height: 180px;
+
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+    overflow: hidden;
 }
+
+.game-image-container .game-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    margin: 0;
+
+    transition: transform 0.25s ease;
+}
+
+.game-card:hover .game-image {
+    transform: scale(1.03);
+}
+
+/* PLACEHOLDER VOOR GAMES ZONDER AFBEELDING */
+
+.game-image-placeholder {
+    width: 100%;
+    height: 100%;
+
+    background-color: #f1eaff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 55px;
+
+    border-radius: 8px;
+}
+
+/* =================================
+   ZOEKBALK
+================================= */
+
+.search-input {
+    width: 100%;
+
+    padding: 12px 14px;
+    margin-bottom: 20px;
+
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-input:focus {
+    outline: none;
+
+    border-color: #6e25eb;
+
+    box-shadow: 0 0 0 3px rgba(110, 37, 235, 0.12);
+}
+
+/* =================================
+   FAVORIETEN KNOP
+================================= */
 
 .favorite-button {
-    margin-top: 12px;
-    padding: 8px 14px;
+    margin-top: auto;
+
+    padding: 10px 14px;
+
     background-color: #6e25eb;
     color: white;
+
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+
     cursor: pointer;
-    transition: background-color .2s;
+
+    align-self: flex-start;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .favorite-button:hover {
     background-color: #5b1fd0;
+
+    transform: scale(1.03);
 }
 
-.search-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 25px;
-    border: 1px solid #cccccc;
+/* =================================
+   FILTER KNOP
+================================= */
+
+.filter-button {
+    margin-bottom: 20px;
+    margin-right: 10px;
+
+    padding: 10px 14px;
+
+    border: 1px solid #6e25eb;
     border-radius: 8px;
-    font-size: 16px;
+
+    background-color: white;
+    color: #6e25eb;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
+.filter-button:hover,
+.filter-button.active {
+    background-color: #6e25eb;
+    color: white;
+}
 
-.game-image {
+/* =================================
+   FOOTER
+================================= */
 
-    width: 100%;
+footer {
+    margin-top: 35px;
+    padding-top: 20px;
 
-    height: 420px;
+    border-top: 1px solid #dddddd;
 
-    object-fit: cover;
+    color: #777777;
+    font-size: 14px;
+}
 
-    border-radius: 8px;
+/* =================================
+   TABLET
+================================= */
 
-    margin-bottom: 15px;
+@media (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
+/* =================================
+   MOBIELE TELEFOONS
+================================= */
+
+@media (max-width: 600px) {
+    .game-list {
+        padding: 0 12px;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .game-card {
+        height: 520px;
+        padding: 14px;
+    }
+
+    .game-image-container {
+        height: 180px;
+        min-height: 180px;
+    }
 }
