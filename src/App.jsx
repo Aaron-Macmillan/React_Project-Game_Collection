@@ -94,9 +94,9 @@ function App() {
                     </p>
                 )}
 
-                <p>Naam: Aaron Macmillan</p>
-                <p>Studentnummer: 2238167</p>
-                <p>Klas: 25B</p>
+                <p>Naam: Aaron</p>
+                <p>Studentnummer: N/A</p>
+                <p>Klas: N/A</p>
             </div>
 
             <Footer />
